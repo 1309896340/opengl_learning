@@ -1,0 +1,6 @@
+make --dry-run --keep-going --print-directory
+make: Entering directory '/home/max/桌面/opengl_learning'
+make: Leaving directory '/home/max/桌面/opengl_learning'
+ 
+make: *** No targets specified and no makefile found.  Stop.
+
