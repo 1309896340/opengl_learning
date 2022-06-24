@@ -1,9 +1,10 @@
 #version 330 core
-layout (location = 0) in vec3 position;
+layout (location = 0) in uvec3 position;
 out vec3 color;
-
+vec3 position_o;
 void main(){
-	gl_Position = vec4(position.x,position.y,position.z,1.0);
-	color = position;
+	position_o = vec3(position)-0.5;
+	gl_Position = vec4(position_o.x - 0.1*position_o.y,position_o.y + 0.1*position_o.x,position_o.z,1.0);
+	color = position_o;
 }
 

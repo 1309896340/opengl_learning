@@ -53,6 +53,7 @@ int main(int argc,char **argv){
 	GLfloat vertices[] = {
 		-0.5f,0.5f,0.0f,
 		0.5f,0.5f,0.0f,
+		1.0f,-0.5f,0.0f,
 		0.0f,-0.5f,0.0f
 	};
 
@@ -112,11 +113,9 @@ int main(int argc,char **argv){
 		glGetProgramInfoLog(shaderProgram,512,NULL,infoLog);
 		puts("error : shaderPrograme link failed");
 	}
-	glUseProgram(shaderProgram);
-	
-	
 	glDeleteShader(vertexShader);
-	glDeleteShader(fragmentShader);	
+	glDeleteShader(fragmentShader);
+	glUseProgram(shaderProgram);
 	
 // bind VAO
 	GLuint VAO;
@@ -137,7 +136,7 @@ int main(int argc,char **argv){
 		glClear(GL_COLOR_BUFFER_BIT);
 
 		glBindVertexArray(VAO);
-		glDrawArrays(GL_TRIANGLES,0,3);
+		glDrawArrays(GL_LINE_LOOP,0,4);
 		glBindVertexArray(0);
 		
 		

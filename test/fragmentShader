@@ -2,6 +2,7 @@
 out vec4 fcolor;
 in vec3 color;
 void main(){
-	fcolor = vec4(color.xy*0.7+0.3,color.y*0.7-0.3,1.0f);
+	fcolor = vec4(abs(color.xy)*0.7+0.3,abs(color.y)*0.6+0.2,1.0);
+	//fcolor = vec4(0.2,0.1,1.0,1.0);
 }
 
